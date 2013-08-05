@@ -1,5 +1,7 @@
-%Created: 2013 Eli Hulse
-%thank you for downloading, enjoy, if you have any questions, email me at 
+%copyright 2013 Eli Hulse
+%duplication is allowed as long as my name is referenced somewhere in
+%the application or source code.
+%thank you, enjoy, if you have any questions, email me at 
 %elihulse5@gmail.com
 %%
 %trainingData is the initial inputs
@@ -24,22 +26,20 @@ for i=1:x
         weights(i,j)=weight_ij;
     end
 end
-weights
+
 %recalling
-for j=1:10
-    matrix=input('input matrix:');
-    fprintf('input:');
-    fprintf('%d ',matrix);
-    output=rand(size(matrix));
-    for i=1:100
-        if ismember(output,trainingDataUnModified,'rows')==1
-           break;
-        else
-            output_absolute=matrix*weights';
-            output=output_absolute>=1;
-            fprintf(' output%d:',i);
-            fprintf('%d ',output);
-        end
-        fprintf('\n');
+matrix=input('input matrix:');
+fprintf('input:');
+fprintf('%d ',matrix);
+output=rand(size(matrix));
+for i=1:100
+    if ismember(output,trainingDataUnModified,'rows')==1
+       break;
+    else
+        output_absolute=matrix*weights';
+        output=output_absolute>=1;
+        fprintf(' output%d:',i);
+        fprintf('%d ',output);
     end
+    fprintf('\n');
 end
